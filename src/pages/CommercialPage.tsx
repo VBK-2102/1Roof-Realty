@@ -28,7 +28,7 @@ export const CommercialPage: React.FC = () => {
       />
 
       <section className="pt-8 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
-        <ScrollReveal animation="fade-up">
+        <ScrollReveal direction="down">
           <div className="p-8 sm:p-12 rounded-[40px] bento-card-dark text-white space-y-4">
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/10 text-[#FFB088] text-xs font-mono">
               <Briefcase className="w-3.5 h-3.5" />
@@ -46,7 +46,7 @@ export const CommercialPage: React.FC = () => {
       </section>
 
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <ScrollReveal animation="fade-up" delay={0.1}>
+        <ScrollReveal direction="up" delay={0.1}>
           <DemoBadge />
 
           {loading ? (

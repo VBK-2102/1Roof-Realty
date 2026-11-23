@@ -9,6 +9,7 @@ interface ScrollRevealProps {
   distance?: number;
   className?: string;
   scale?: boolean;
+  animation?: 'fade-up' | 'fade-down' | 'fade-left' | 'fade-right' | 'fade' | string;
 }
 
 export const ScrollReveal: React.FC<ScrollRevealProps> = ({
@@ -19,9 +20,21 @@ export const ScrollReveal: React.FC<ScrollRevealProps> = ({
   distance = 30,
   className = '',
   scale = false,
+  animation,
 }) => {
+  const getEffectiveDirection = (): 'up' | 'down' | 'left' | 'right' | 'none' => {
+    if (animation) {
+      if (animation === 'fade-up') return 'up';
+      if (animation === 'fade-down') return 'down';
+      if (animation === 'fade-left') return 'left';
+      if (animation === 'fade-right') return 'right';
+      if (animation === 'fade') return 'none';
+    }
+    return direction;
+  };
+
   const getInitialPosition = () => {
-    switch (direction) {
+    switch (getEffectiveDirection()) {
       case 'up':
         return { y: distance, x: 0 };
       case 'down':

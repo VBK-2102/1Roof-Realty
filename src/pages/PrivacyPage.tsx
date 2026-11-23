@@ -11,7 +11,7 @@ export const PrivacyPage: React.FC = () => {
         description="Data protection and privacy guidelines for One Roof Realty LLP. Compliance with digital personal data protection norms."
       />
 
-      <ScrollReveal animation="fade-up">
+      <ScrollReveal direction="down">
         <div className="border-b border-[#F1D6CE] pb-6 space-y-2">
           <span className="text-xs font-mono text-[#963D2C] uppercase tracking-wider font-semibold">
             Data Governance & Confidentiality
@@ -23,7 +23,7 @@ export const PrivacyPage: React.FC = () => {
         </div>
       </ScrollReveal>
 
-      <ScrollReveal animation="fade-up" delay={0.1}>
+      <ScrollReveal direction="up" delay={0.1}>
         <div className="prose prose-sm max-w-none text-xs sm:text-sm text-[#57443E] leading-relaxed space-y-6">
           <section className="space-y-2">
             <h2 className="text-base font-bold text-[#141912]">1. Information We Collect</h2>
