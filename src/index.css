@@ -1,0 +1,118 @@
+@import "tailwindcss";
+
+@theme {
+  --color-linen: #FAF7F2;
+  --color-ivory: #F8F3EC;
+  --color-brick-dark: #3D1007;
+  --color-brick-deep: #6E2214;
+  --color-brick-primary: #963D2C;
+  --color-brick-vibrant: #B54D35;
+  --color-brick-accent: #C86245;
+  --color-brick-light: #FBECE7;
+  --color-brick-blush: #F6DDD4;
+  --color-brick-border: #ECDCD5;
+  
+  --color-amber-glow: #FFB088;
+  --color-amber-warm: #E87A47;
+  --color-charcoal-deep: #211613;
+  --color-charcoal-muted: #5C4944;
+
+  --font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-serif: 'Newsreader', Georgia, serif;
+  --font-mono: 'JetBrains Mono', monospace;
+}
+
+:root {
+  color-scheme: light;
+}
+
+body {
+  background-color: #FAF7F2;
+  color: #211613;
+  font-family: var(--font-sans);
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Architectural Grid Background with Warm Gradients */
+.bg-grid-architectural {
+  background-color: #FAF7F2;
+  background-image: 
+    radial-gradient(at 0% 0%, rgba(181, 77, 53, 0.08) 0px, transparent 50%),
+    radial-gradient(at 100% 0%, rgba(200, 98, 69, 0.06) 0px, transparent 50%),
+    radial-gradient(at 50% 100%, rgba(150, 61, 44, 0.07) 0px, transparent 50%),
+    linear-gradient(to right, rgba(150, 61, 44, 0.045) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(150, 61, 44, 0.045) 1px, transparent 1px);
+  background-size: 100% 100%, 100% 100%, 100% 100%, 36px 36px, 36px 36px;
+}
+
+/* Subtle Grid Tile Pattern for Section Backgrounds */
+.grid-mesh-overlay {
+  background-image: 
+    linear-gradient(to right, rgba(150, 61, 44, 0.05) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(150, 61, 44, 0.05) 1px, transparent 1px);
+  background-size: 32px 32px;
+}
+
+/* Custom Editorial Styling */
+.font-serif-italic {
+  font-family: var(--font-serif);
+  font-style: italic;
+  color: #B54D35;
+  font-weight: 400;
+}
+
+/* Brick Telemetry indicator pulse */
+@keyframes pulseBrickGlow {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 1;
+    box-shadow: 0 0 0 0 rgba(255, 176, 136, 0.7);
+  }
+  50% {
+    transform: scale(1.06);
+    opacity: 0.85;
+    box-shadow: 0 0 0 8px rgba(255, 176, 136, 0);
+  }
+}
+
+.pulse-brick {
+  animation: pulseBrickGlow 2.5s infinite cubic-bezier(0.4, 0, 0.6, 1);
+}
+
+/* Bento glass cards with Brick border */
+.bento-card {
+  background: rgba(255, 255, 255, 0.88);
+  backdrop-filter: blur(14px);
+  border: 1px solid #ECDCD5;
+  box-shadow: 0 4px 24px -2px rgba(61, 16, 7, 0.04);
+}
+
+/* Signature Deep Brick Gradient Containers */
+.bento-card-dark {
+  background: linear-gradient(145deg, #7A2514 0%, #3D1007 100%);
+  border: 1px solid rgba(255, 220, 210, 0.18);
+  box-shadow: 0 24px 50px -15px rgba(61, 16, 7, 0.45);
+}
+
+.bento-card-brick-light {
+  background: linear-gradient(145deg, #FFFFFF 0%, #FBECE7 100%);
+  border: 1px solid #ECDCD5;
+}
+
+/* Custom Brick Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #FAF7F2;
+}
+::-webkit-scrollbar-thumb {
+  background: #D9B7AD;
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #963D2C;
+}
